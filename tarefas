@@ -1,0 +1,38 @@
+Servidor
+
+senha do aluno
+
+senha do professor
+
+configurar o READY do servidor
+
+mensagem de 8 bits para o recv(), com análise de falha
+
+mensagem de sucesso de 2 bits
+
+Mensagem de matrícula
+
+Tratativa da mensagem de matrícula
+
+Caso da senha do professor recebida
+
+envio do byte nulo e mensagem de OK
+
+Cliente
+
+mensagem de READY
+
+envio da senha
+
+mensagem de OK
+
+mensagem de matrícula
+
+mensagem de ok e fechamento da conexão
+
+recebimento da matrícula e impressão das mesmas
+
+mensagem de ok e fechamento da conexão
+
+
+Temporizador
