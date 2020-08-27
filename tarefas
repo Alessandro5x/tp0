@@ -1,10 +1,10 @@
 Servidor
 
-senha do aluno
+senha do aluno ---V
 
-senha do professor
+senha do professor ---V
 
-configurar o READY do servidor
+configurar o READY do servidor ---V
 
 mensagem de 8 bits para o recv(), com análise de falha
 
