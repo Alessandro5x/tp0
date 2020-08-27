@@ -29,7 +29,33 @@ void * client_thread(void *data) {
 
     char caddrstr[BUFSZ];
     addrtostr(caddr, caddrstr, BUFSZ);
+    char ready[BUFSZ];
+	memset(ready, 0, BUFSZ);
+    //READY
+    sprintf(ready, "1010010 1000101 1000001 1000100 1011001", caddrstr);
+	size_t cnt = send(cdata->csock, ready, strlen(ready)+1, 0);
+	if (cnt != strlen(ready)+1) {
+		logexit("send");
+	}
     printf("[log] connection from %s\n", caddrstr);
+
+	char passaluno[8];
+	char passprofessor[8];
+
+	printf("Senha dos alunos é: ");
+	int i;
+	for( i = 0; i < 8; i++) {
+    	passaluno[i] = 33 + rand() % 94-6;
+	}
+    passaluno[i] = '\0';
+	printf("%s\n",passaluno);
+
+	printf("Senha do professor: ");
+	for( i = 0; i < 8; i++) {
+        passprofessor[i] = 33 + rand() % 94-7;
+	}
+	passprofessor[i] = '\0';
+	printf("%s\n",passprofessor);
 
     char buf[BUFSZ];
     memset(buf, 0, BUFSZ);
@@ -42,6 +68,7 @@ void * client_thread(void *data) {
         logexit("send");
     }
     close(cdata->csock);
+    free(cdata);
 
     pthread_exit(EXIT_SUCCESS);
 }
